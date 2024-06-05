@@ -5,9 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:stemwijzer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Height="60" Width="70" Content="submit" />
+        Title="MainWindow" Height="450" Width="800"
+        Background="#2B2D42">
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#EDF2F4"></Grid>
     </Grid>
 </Window>

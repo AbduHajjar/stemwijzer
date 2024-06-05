@@ -20,6 +20,5 @@
         </Grid.RowDefinitions>
 
         <Grid Background="#EDF2F4"></Grid>
-        <Button Height="50" Width="50"/>
     </Grid>
 </Window>

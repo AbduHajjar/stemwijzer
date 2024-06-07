@@ -29,9 +29,9 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Image Source="C:\stemwijzer nieuw\project 2 nieuw\stemwijzer 222\assets\logo-met-text-rechts.png"></Image>
+                <Image Source="C:\Users\abbod\Desktop\School\project2\stemwijzer\assets\logo-met-text-rechts.png"></Image>
 
-                <Button Grid.Column="1" Background="">Stemwijzer</Button>
+
 
             </Grid>
 

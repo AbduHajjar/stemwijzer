@@ -58,8 +58,8 @@
 
         <Grid Name="MainGrid" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition ></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -68,8 +68,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock  Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30"> Start nu de stemwijzer!</TextBlock>
-            
+            <TextBlock Margin="50,50,0,0" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30"> Doe de stemwijzer</TextBlock>
+            <TextBlock Background="#EDF2F4" Grid.Row="1"> </TextBlock>
         </Grid>
 
  

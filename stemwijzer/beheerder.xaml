@@ -28,7 +28,26 @@
                 <RowDefinition Height="9*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Background="#EDF2F4"></Grid>
+            <Grid Name="MenuGrid" Background="#EDF2F4">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="\assets\logo-met-text-rechts.png"></Image>
+
+
+
+                <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120">Stemwijzer</Button>
+                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Verkiezingen</Button>
+                <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Over ons</Button>
+                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Beheerder</Button>
+
+            </Grid>
         </Grid>
 
         <Grid Name="beheerderGrid" Width="500" Height="200" Background="#8D99AE">

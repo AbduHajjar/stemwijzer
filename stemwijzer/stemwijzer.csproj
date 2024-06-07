@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\logo-met-text-rechts.png" />
     <None Remove="Fonts\Inter\Inter.ttf" />
     <None Remove="Fonts\Quicksand\static\Quicksand-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="assets\logo-met-text-rechts.png" />
     <Resource Include="Fonts\Inter\Inter.ttf" />
     <Resource Include="Fonts\Quicksand\Quicksand-Regular.ttf" />
   </ItemGroup>

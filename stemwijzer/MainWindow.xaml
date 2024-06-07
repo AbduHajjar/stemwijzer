@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:stemwijzer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="Home" Height="450" Width="800"
         Background="#2B2D42">
 
     <Window.Resources>
@@ -43,7 +43,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Image Source="\assets\logo-met-text-rechts.png"></Image>
+                <Image Source="/assets\logo-met-text-rechts.png"></Image>
 
 
 

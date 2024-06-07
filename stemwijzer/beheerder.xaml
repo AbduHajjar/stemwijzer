@@ -1,0 +1,45 @@
+﻿<Window x:Class="stemwijzer.beheerder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:stemwijzer"
+        mc:Ignorable="d"
+        Title="Beheerder" Height="450" Width="800" Background="#2B2D42">
+    <Window.Resources>
+        <Style x:Key="CustomFont">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/Inter/#Inter Bold"></Setter>
+        </Style>
+        <Style x:Key="CustomFontQ">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/Quicksand/#Quicksand Regular"></Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="99*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Background="#EDF2F4"></Grid>
+        </Grid>
+
+        <Grid Name="beheerderGrid" Width="500" Height="200" Background="#8D99AE">
+
+            <TextBlock Name="BeheerderTbl" Style="{StaticResource CustomFont}" Width="250" Height="50" FontWeight="Bold"  Foreground="#EDF2F4" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">Beheerder login</TextBlock>
+            <TextBlock Name="GebruiksnaamTbl" Style="{StaticResource CustomFontQ}" Width="150" Height="40" FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,60,0,0">Gebruiksnaam:</TextBlock>
+            <TextBlock Name="WachtwoordTbl" Style="{StaticResource CustomFontQ}" Width="150" Height="40" FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,100,0,0">Wachtwoord:</TextBlock>
+            <TextBox Name="GebruiksnaamTb" Style="{StaticResource CustomFontQ}"  Width="150" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,70,0,0"/>
+            <TextBox Name="WachtwoordTb" Style="{StaticResource CustomFontQ}" Width="150" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,110,0,0"/>
+            <Button Name="Loginbtn" Style="{StaticResource CustomFontQ}" Width="100" Height="25" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,150,0,0"/>
+
+        </Grid> 
+    </Grid>
+</Window>

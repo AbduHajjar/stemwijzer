@@ -34,12 +34,10 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Image Source="C:\stemwijzer nieuw\project 2 nieuw\stemwijzer 222\assets\logo-met-text-rechts.png"></Image>
+                <Image Source="C:\Users\abbod\Desktop\School\project2\stemwijzer\assets\logo-met-text-rechts.png"></Image>
 
-                <Button Grid.Column="1" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120">Stemwijzer</Button>
-                <Button Grid.Column="2" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Verkiezingen</Button>
-                <Button Grid.Column="3" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Over ons</Button>
-                <Button Grid.Column="4" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Beheerder</Button>
+
+
 
             </Grid>
         </Grid>

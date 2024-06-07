@@ -19,6 +19,21 @@
             <RowDefinition Height="9*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Background="#EDF2F4"></Grid>
+        <Grid Background="#EDF2F4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/logo-met-text-rechts.png" />
+
+            </Grid>
+
+        </Grid>
+
     </Grid>
 </Window>

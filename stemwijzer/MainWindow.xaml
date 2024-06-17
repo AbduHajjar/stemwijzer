@@ -22,44 +22,36 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="99*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
         </Grid.RowDefinitions>
 
 
 
-        <Grid Background="#EDF2F4" Name="MenuGrid">
+        <Grid Name="MenuGrid" Background="#EDF2F4" Grid.Row="0">
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition  Width="10*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
-                    <ColumnDefinition  Width="10*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
-                    <ColumnDefinition  Width="10*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1"></ColumnDefinition>
-                    <ColumnDefinition  Width="10*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
-                    <ColumnDefinition  Width="10*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" Source="/assets\logo-met-text-rechts.png"></Image>
+            <Image Source="\assets\logo-met-text-rechts.png"></Image>
 
 
 
-                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120">Stemwijzer</Button>
-                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Verkiezingen</Button>
-                <Button Grid.Column="6"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Over ons</Button>
-                <Button Grid.Column="8"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Beheerder</Button>
+            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10">Stemwijzer</Button>
+            <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Verkiezingen</Button>
+            <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
+            <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
 
-
-            </Grid>
         </Grid>
 
         <Grid Name="MainGrid" Margin="0,43,0,0" Grid.RowSpan="2">
@@ -70,14 +62,16 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*"></ColumnDefinition>
-                <ColumnDefinition Width="20*"></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="257*"></ColumnDefinition>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="71*"></ColumnDefinition>
+                <ColumnDefinition Width="284*"/>
+                <ColumnDefinition Width="89*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Margin="50,50,0,0" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30"> Doe de stemwijzer</TextBlock>
+            <TextBlock Margin="50,50,0,0" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30" Grid.ColumnSpan="2"> Doe de stemwijzer</TextBlock>
 
-            <Grid Name="TextBloci" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <Grid Name="TextBloci" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,156,0,0">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"></RowDefinition>

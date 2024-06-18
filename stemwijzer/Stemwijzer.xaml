@@ -1,0 +1,111 @@
+﻿<Window x:Class="stemwijzer.Stemwijzer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:stemwijzer"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800"
+        Background="#2B2D42">
+
+    <Window.Resources>
+        <Style x:Key="CustomFont">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/Inter/#Inter Bold"></Setter>
+        </Style>
+        <Style x:Key="CustomFontQ">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/Quicksand/#Quicksand Regular"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Background="#EDF2F4" Name="MenuGrid">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/assets\logo-met-text-rechts.png"></Image>
+
+
+
+                <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120">Stemwijzer</Button>
+                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Verkiezingen</Button>
+                <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Over ons</Button>
+                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Beheerder</Button>
+
+
+            </Grid>
+        </Grid>
+
+        <Grid Name="MainGrid" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="bdrArrow1" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0" BorderBrush="#EDF2F4" BorderThickness="1" CornerRadius="29" Width="60" Height="60">
+                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowLeft" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                    ←
+                </Button>
+            </Border>
+
+            <Border x:Name="bdrArrow2" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" BorderBrush="#EDF2F4" BorderThickness="1" CornerRadius="29" Width="60" Height="60">
+                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowRight" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                    →
+                </Button>
+            </Border>
+
+            <TextBlock Margin="0,40,0,0" Grid.Column="1" Grid.Row="0" TextAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30">Nepnieuws</TextBlock>
+            <TextBlock Margin="0,50,0,0" Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="20">Sociale-mediabedrijven moeten zelf kunnen beslissen</TextBlock>
+
+
+            <Border x:Name="bdrEensoneens1" Margin="335,0,0,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1" CornerRadius="8" Width="130" Height="60">
+                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens1" BorderBrush="Transparent" Background="red" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                    Oneens
+                </Button>
+            </Border>
+
+            <Border x:Name="bdrEensonees3" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" BorderBrush="#8D99AE" BorderThickness="1" CornerRadius="8" Width="220" Height="60">
+                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens3" BorderBrush="Transparent" Background="#8D99AE" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                    Geen antwoord
+                </Button>
+            </Border>
+
+            <Border x:Name="bdrEensonees2" Margin="-450,0,0,0" Grid.Row="2" Grid.Column="1" BorderBrush="Green" BorderThickness="1" CornerRadius="8" Width="130" Height="60">
+                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens2" BorderBrush="Transparent" Background="Green" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                    Eens
+                </Button>
+            </Border>
+
+            <TextBlock Margin="-35,80,0,0" Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="25" Width="55" Height="30">1/15</TextBlock>
+        </Grid>
+
+
+    </Grid>
+</Window>

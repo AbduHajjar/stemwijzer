@@ -24,4 +24,8 @@
     <Folder Include="Fonts\Inter\static\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+  </ItemGroup>
+
 </Project>

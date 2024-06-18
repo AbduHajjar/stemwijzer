@@ -23,5 +23,23 @@ namespace stemwijzer
         {
             InitializeComponent();
         }
+
+        string username = "admin";
+        string password = "0000";
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtUsername.Text == username && txtPassword.Text == password)
+            {
+                partijen partijen = new partijen();
+                partijen.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Gebruikersnaam of wachtwoord is onjuist.");
+            }
+        }
+
     }
 }

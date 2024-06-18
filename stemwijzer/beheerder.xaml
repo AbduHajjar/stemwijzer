@@ -15,7 +15,7 @@
         </Style>
     </Window.Resources>
     
-    <Grid>
+    
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -42,23 +42,38 @@
 
 
 
-                <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120">Stemwijzer</Button>
-                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Verkiezingen</Button>
-                <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Over ons</Button>
-                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Height="30" Width="120" >Beheerder</Button>
+                <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10">Stemwijzer</Button>
+                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Verkiezingen</Button>
+                <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
+                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
 
             </Grid>
+            
+            <!--hier onder-->
+            <Grid Grid.Row="1" Name="beheerderGrid" Margin="80" Background="#8D99AE">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1" Name="BeheerderTbl" Style="{StaticResource CustomFont}" FontWeight="Bold"  Foreground="#EDF2F4" FontSize="30" Margin="5,5,0,0">Beheerder login</TextBlock>
+            <TextBlock Grid.Row="3" Name="GebruiksnaamTbl" Style="{StaticResource CustomFontQ}"  FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" Margin="5,0,0,0">Gebruiksnaam:</TextBlock>
+            <TextBlock Grid.Row="5" Name="WachtwoordTbl" Style="{StaticResource CustomFontQ}"  FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" Margin="5,0,0,0">Wachtwoord:</TextBlock>
+            <TextBox  Grid.Row="3" Name="GebruiksnaamTb" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10" />
+            <TextBox Grid.Row="5" Name="WachtwoordTb" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10"/>
+            <Button Grid.Row="7" Name="Loginbtn" Style="{StaticResource CustomFontQ}" Foreground="#8D99AE" Content="Login" Margin="100,0,400,10"/>
+
+            </Grid>
+
         </Grid>
 
-        <Grid Name="beheerderGrid" Width="500" Height="200" Background="#8D99AE">
-
-            <TextBlock Name="BeheerderTbl" Style="{StaticResource CustomFont}" Width="250" Height="50" FontWeight="Bold"  Foreground="#EDF2F4" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">Beheerder login</TextBlock>
-            <TextBlock Name="GebruiksnaamTbl" Style="{StaticResource CustomFontQ}" Width="150" Height="40" FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,60,0,0">Gebruiksnaam:</TextBlock>
-            <TextBlock Name="WachtwoordTbl" Style="{StaticResource CustomFontQ}" Width="150" Height="40" FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,100,0,0">Wachtwoord:</TextBlock>
-            <TextBox Name="GebruiksnaamTb" Style="{StaticResource CustomFontQ}"  Width="150" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,70,0,0"/>
-            <TextBox Name="WachtwoordTb" Style="{StaticResource CustomFontQ}" Width="150" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,110,0,0"/>
-            <Button Name="Loginbtn" Style="{StaticResource CustomFontQ}" Width="100" Height="25" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,150,0,0"/>
-
-        </Grid> 
-    </Grid>
+       
+    
 </Window>

@@ -23,9 +23,7 @@ namespace stemwijzer
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
-            StartPagina startPaginaStart = new StartPagina();
-            startPaginaStart.Show();
-            this.Close();
+           
         }
     }
 }

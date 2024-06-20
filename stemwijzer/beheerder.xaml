@@ -66,9 +66,9 @@
             <TextBlock Grid.Row="1" Name="BeheerderTbl" Style="{StaticResource CustomFont}" FontWeight="Bold"  Foreground="#EDF2F4" FontSize="30" Margin="5,5,0,0">Beheerder login</TextBlock>
             <TextBlock Grid.Row="3" Name="GebruiksnaamTbl" Style="{StaticResource CustomFontQ}"  FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" Margin="5,0,0,0">Gebruiksnaam:</TextBlock>
             <TextBlock Grid.Row="5" Name="WachtwoordTbl" Style="{StaticResource CustomFontQ}"  FontWeight="Light"  Foreground="#EDF2F4" FontSize="20" Margin="5,0,0,0">Wachtwoord:</TextBlock>
-            <TextBox  Grid.Row="3" Name="txtUsername" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10" />
-            <TextBox Grid.Row="5" Name="txtPassword" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10"/>
-            <Button Grid.Row="7" Name="Loginbtn" Style="{StaticResource CustomFontQ}" Foreground="#8D99AE" Content="Login" Margin="100,0,400,10" Click="btnLogin_Click"/>
+            <TextBox  Grid.Row="3" Name="GebruiksnaamTb" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10" />
+            <TextBox Grid.Row="5" Name="WachtwoordTb" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10"/>
+            <Button Grid.Row="7" Name="Loginbtn" Style="{StaticResource CustomFontQ}" Foreground="#8D99AE" Content="Login" Margin="100,0,400,10"/>
 
             </Grid>
 

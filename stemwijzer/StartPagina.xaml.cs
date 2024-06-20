@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 namespace stemwijzer
 {
     /// <summary>
-    /// Interaction logic for partijen.xaml
+    /// Interaction logic for StartPagina.xaml
     /// </summary>
-    public partial class partijen : Window
+    public partial class StartPagina : Window
     {
-        public partijen()
+        public StartPagina()
         {
             InitializeComponent();
+        }
+
+        private void BtnStart2_Click(object sender, RoutedEventArgs e)
+        {
+            Stemwijzer StemwijzerStart = new Stemwijzer();
+            StemwijzerStart.Show();
+            this.Close();
         }
     }
 }

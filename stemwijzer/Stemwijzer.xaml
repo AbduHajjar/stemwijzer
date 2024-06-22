@@ -84,19 +84,19 @@
 
 
             <Border x:Name="bdrEensoneens1" Margin="335,0,0,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1" CornerRadius="8" Width="130" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens1" BorderBrush="Transparent" Background="red" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="btnOneens" BorderBrush="Transparent" Background="red" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
                     Oneens
                 </Button>
             </Border>
 
             <Border x:Name="bdrEensonees3" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" BorderBrush="#8D99AE" BorderThickness="1" CornerRadius="8" Width="220" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens3" BorderBrush="Transparent" Background="#8D99AE" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="btnGeenantwoord" BorderBrush="Transparent" Background="#8D99AE" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
                     Geen antwoord
                 </Button>
             </Border>
 
             <Border x:Name="bdrEensonees2" Margin="-450,0,0,0" Grid.Row="2" Grid.Column="1" BorderBrush="Green" BorderThickness="1" CornerRadius="8" Width="130" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="btnEensoneens2" BorderBrush="Transparent" Background="Green" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="btnEens" BorderBrush="Transparent" Background="Green" Foreground="#EDF2F4" FontSize="25" Grid.Row="1" Grid.Column="2" Height="58" VerticalAlignment="Bottom" Click="btnEens_Click" >
                     Eens
                 </Button>
             </Border>

@@ -23,5 +23,10 @@ namespace stemwijzer
         {
             InitializeComponent();
         }
+
+        private void btnEens_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace stemwijzer
         public void FillPartijen()
         {
             string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-            string SelectPartijen = "SELECT name FROM partijen";
+            string SelectPartijen = "SELECT name, score FROM partijen";
+
 
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
@@ -43,18 +44,18 @@ namespace stemwijzer
             while (reader.Read())
             {
                 string partij = reader.GetString("name");
-                partijnLijst.Items.Add(partij);
+                string score = reader.GetInt32("score").ToString();
+                partijnLijst.Items.Add($"{partij} - Score: {score}");
             }
             connection.Close();
         }
 
         private void btnAddPartij_Click(object sender, RoutedEventArgs e)
         {
-            if (txtPartij.Text == "")
+            if (txtPartij.Text == "" || txtScore.Text == "")
             {
-                MessageBox.Show("Vul een partij in.");
+                MessageBox.Show("Vul een partij en score in.");
             }
-
             else if (partijnLijst.Items.Contains(txtPartij.Text.ToUpper()))
             {
                 MessageBox.Show("Deze partij bestaat al.");
@@ -62,13 +63,14 @@ namespace stemwijzer
             else
             {
                 string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-                string InsertPartij = "INSERT INTO partijen (name) VALUES (@name)";
+                string InsertPartij = "INSERT INTO partijen (name, score) VALUES (@name, @score)";
 
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 partijnLijst.Items.Clear();
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(InsertPartij, connection);
                 cmd.Parameters.AddWithValue("@name", txtPartij.Text);
+                cmd.Parameters.AddWithValue("@score", txtScore.Text);
                 cmd.ExecuteNonQuery();
 
                 connection.Close();
@@ -114,16 +116,24 @@ namespace stemwijzer
                 return;
             }
 
-            string selectedPartij = partijnLijst.SelectedItem.ToString();
-
-            if (string.IsNullOrEmpty(selectedPartij))
+            string selectedItem = partijnLijst.SelectedItem.ToString();
+            string[] parts = selectedItem.Split(new string[] { " - Score: " }, StringSplitOptions.None);
+            if (parts.Length != 2)
             {
                 MessageBox.Show("Ongeldige selectie.");
                 return;
             }
 
+            string selectedPartij = parts[0];
+            int selectedScore;
+            if (!int.TryParse(parts[1], out selectedScore))
+            {
+                MessageBox.Show("Ongeldige score.");
+                return;
+            }
+
             string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-            string DeletePartij = "DELETE FROM partijen WHERE name = @name";
+            string DeletePartij = "DELETE FROM partijen WHERE name = @name AND score = @score";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -132,6 +142,7 @@ namespace stemwijzer
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand(DeletePartij, connection);
                     cmd.Parameters.AddWithValue("@name", selectedPartij);
+                    cmd.Parameters.AddWithValue("@score", selectedScore);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Partij verwijderd.");

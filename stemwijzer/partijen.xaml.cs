@@ -160,35 +160,8 @@ namespace stemwijzer
             }
         }
 
-        //private void btnDeletePartij_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (partijnLijst.SelectedItem == null)
-        //    {
-        //        MessageBox.Show("Selecteer een partij.");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-        //        string DeletePartij = "DELETE FROM partijen WHERE name = @name";
+        //adding Update to complete the CRUD..
 
-        //        MySqlConnection connection = new MySqlConnection(connectionString);
-        //        partijnLijst.Items.Clear();
-        //        connection.Open();
-        //        MySqlCommand cmd = new MySqlCommand(DeletePartij, connection);
-        //        if (partijnLijst.SelectedItem == null)
-        //        {
-        //            MessageBox.Show("Selecteer een partij.");
-        //        }
-        //        else
-        //        {
-        //            cmd.Parameters.AddWithValue("@name", partijnLijst.SelectedItem.ToString());
-        //            cmd.ExecuteNonQuery();
-        //        }
 
-        //        connection.Close();
-        //        FillPartijen();
-        //    }
-        //}
     }
 }

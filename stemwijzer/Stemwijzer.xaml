@@ -47,10 +47,10 @@
 
 
 
-            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10">Stemwijzer</Button>
-            <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Verkiezingen</Button>
+            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnHome" Click="btnHome_Click" >Home</Button>
+            <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Stemwijzer</Button>
             <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
-            <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
+            <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnBeheerder" Click="btnBeheerder_Click" >Beheerder</Button>
 
         </Grid>
 
@@ -68,30 +68,30 @@
             </Grid.ColumnDefinitions>
 
             <Border x:Name="bdrArrow1" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0" BorderBrush="#EDF2F4" BorderThickness="1" CornerRadius="29" Width="60" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowLeft" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowLeft" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" Click="BtnArrowLeft_Click" >
                     ←
                 </Button>
             </Border>
 
             <Border x:Name="bdrArrow2" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" BorderBrush="#EDF2F4" BorderThickness="1" CornerRadius="29" Width="60" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowRight" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="BtnArrowRight" BorderBrush="Transparent" Background="Transparent" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" Click="BtnArrowRight_Click" >
                     →
                 </Button>
             </Border>
 
-            <TextBlock Margin="0,40,0,0" Grid.Column="1" Grid.Row="0" TextAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30">Nepnieuws</TextBlock>
-            <TextBlock Margin="0,50,0,0" Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="20">Sociale-mediabedrijven moeten zelf kunnen beslissen</TextBlock>
+            <TextBlock Margin="0,40,0,0" Grid.Column="1" Grid.Row="0" TextAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30" x:Name="txtVraag">Voorbeeld</TextBlock>
+            <TextBlock Margin="0,50,0,0" Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="20" x:Name="txtStelling">Voorbeeld</TextBlock>
 
 
             <Border x:Name="bdrEensoneens1" Margin="335,0,0,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1" CornerRadius="8" Width="130" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="btnOneens" BorderBrush="Transparent" Background="red" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
+                <Button Style="{StaticResource CustomFont}" x:Name="btnOneens" BorderBrush="Transparent" Background="red" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" Click="btnOneens_Click" >
                     Oneens
                 </Button>
             </Border>
 
             <Border x:Name="bdrEensonees3" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" BorderBrush="#8D99AE" BorderThickness="1" CornerRadius="8" Width="220" Height="60">
-                <Button Style="{StaticResource CustomFont}" x:Name="btnGeenantwoord" BorderBrush="Transparent" Background="#8D99AE" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" >
-                    Geen antwoord
+                <Button Style="{StaticResource CustomFont}" x:Name="btnGeenantwoord" BorderBrush="Transparent" Background="#8D99AE" Foreground="#EDF2F4" Margin="0,0,0,0" FontSize="25" Grid.Row="1" Grid.Column="2" Click="btnGeenantwoord_Click" >
+                    Geen van beide
                 </Button>
             </Border>
 
@@ -101,7 +101,7 @@
                 </Button>
             </Border>
 
-            <TextBlock Margin="-35,80,0,0" Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="25" Width="55" Height="30">1/15</TextBlock>
+            <TextBlock Margin="-35,80,0,0" Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomFont}" TextAlignment="Center" Foreground="#EDF2F4" FontSize="25" Width="55" Height="30" x:Name="txtNummer">0/0</TextBlock>
         </Grid>
 
 

@@ -160,6 +160,27 @@ namespace stemwijzer
             }
         }
 
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow varMainwindow = new MainWindow();
+            varMainwindow.Show();
+            this.Close();
+        }
+
+        private void btnStemwijzer_Click(object sender, RoutedEventArgs e)
+        {
+            Stemwijzer varStemwijzer = new Stemwijzer();
+            varStemwijzer.Show();
+            this.Close();
+        }
+
+        private void btnBeheerder_Click(object sender, RoutedEventArgs e)
+        {
+            beheerder varBeheerder = new beheerder();
+            varBeheerder.Show();
+            this.Close();
+        }
+
         //adding Update to complete the CRUD..
 
 

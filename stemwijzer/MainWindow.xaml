@@ -48,10 +48,10 @@
 
 
 
-            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10">Stemwijzer</Button>
-            <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Verkiezingen</Button>
-            <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
-            <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
+            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10">Home</Button>
+            <Button x:Name="btnStemwijzer" Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10"  Click="btnStemwijzer_click" >Stemwijzer</Button>
+            <Button x:Name="btnOverons" Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" Click="btnOverons_Click" >Over ons</Button>
+            <Button x:Name="btnBeheerder" Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" Click="btnBeheerder_Click" >Beheerder</Button>
 
         </Grid>
 
@@ -92,7 +92,7 @@ Europees Parlements­verkiezing <LineBreak />6 juni 2024</TextBlock>
 Test je politieke voorkeur <LineBreak /> aan de hand van 15 stellingen.</TextBlock>
 
                 <Border x:Name="bdrStemwijzer2" Margin="0,0,0,0" Grid.Row="2" Grid.Column="2" BorderBrush="#8D99AE" BorderThickness="1" CornerRadius="8" Width="200" Height="50">
-                    <Button Style="{StaticResource CustomFont}" x:Name="BtnFietsen" BorderBrush="Transparent" Background="Transparent" Foreground="#8D99AE" Margin="0,0,0,0" FontSize="16" Grid.Row="1" Grid.Column="2" >
+                    <Button Style="{StaticResource CustomFont}" x:Name="btnStart" BorderBrush="Transparent" Background="Transparent" Foreground="#8D99AE" Margin="0,0,0,0" FontSize="16" Grid.Row="1" Grid.Column="2" Click="BtnStart_Click" >
                         Start de stemwijzer
                     </Button>
                 </Border>

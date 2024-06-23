@@ -23,7 +23,29 @@ namespace stemwijzer
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
-           
+            Stemwijzer varStemwijzer = new Stemwijzer();
+            varStemwijzer.Show();
+            this.Close();
         }
+
+        private void btnStemwijzer_click(object sender, RoutedEventArgs e)
+        {
+            Stemwijzer varStemwijzer = new Stemwijzer();
+            varStemwijzer.Show();
+            this.Close();
+        }
+
+        private void btnOverons_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBeheerder_Click(object sender, RoutedEventArgs e)
+        {
+            beheerder varBeheerder = new beheerder();
+            varBeheerder.Show();
+            this.Close();
+        }
+
     }
 }

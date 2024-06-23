@@ -41,5 +41,18 @@ namespace stemwijzer
             }
         }
 
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow varMainwindow = new MainWindow();
+            varMainwindow.Show();
+            this.Close();
+        }
+
+        private void btnStemwijzer_Click(object sender, RoutedEventArgs e)
+        {
+            Stemwijzer varStemwijzer = new Stemwijzer();
+            varStemwijzer.Show();
+            this.Close();
+        }
     }
 }

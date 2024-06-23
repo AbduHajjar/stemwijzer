@@ -79,29 +79,53 @@ namespace stemwijzer
 
         private void btnUpdatePartij_Click(object sender, RoutedEventArgs e)
         {
+
             if (partijnLijst.SelectedItem == null)
             {
                 MessageBox.Show("Selecteer een partij.");
+                return;
             }
-            else if (txtPartij.Text == "")
+
+            string selectedPartij = partijnLijst.SelectedItem.ToString();
+
+            if (string.IsNullOrEmpty(selectedPartij))
+            {
+                MessageBox.Show("Ongeldige selectie.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPartij.Text))
             {
                 MessageBox.Show("Vul een partij in.");
+                return;
             }
-            else
+
+            string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
+            string UpdatePartij = "UPDATE partijen SET name = @name WHERE name = @selectedPartij";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-                string UpdatePartij = "UPDATE partijen SET name = @name WHERE name = @selectedName";
+                try
+                {
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand(UpdatePartij, connection);
+                    cmd.Parameters.AddWithValue("@name", txtPartij.Text);
+                    cmd.Parameters.AddWithValue("@selectedPartij", selectedPartij);
+                    cmd.ExecuteNonQuery();
 
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                partijnLijst.Items.Clear();
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(UpdatePartij, connection);
-                cmd.Parameters.AddWithValue("@name", txtPartij.Text);
-                cmd.Parameters.AddWithValue("@selectedName", partijnLijst.SelectedItem.ToString());
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
-                FillPartijen();
+                    MessageBox.Show("Partij bijgewerkt.");
+                    partijnLijst.Items.Clear();
+                    txtPartij.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Er is een fout opgetreden: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    FillPartijen();
+                }
             }
 
         }
@@ -147,6 +171,16 @@ namespace stemwijzer
                     FillPartijen();
                 }
             }
+        }
+
+        private void partijnLijst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = partijnLijst.SelectedItem;
+            if (selectedItem != null)
+            {
+                txtPartij.Text = selectedItem.ToString();
+            }
+
         }
 
         //adding Update to complete the CRUD..

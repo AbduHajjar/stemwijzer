@@ -14,43 +14,43 @@
             <Setter Property="TextElement.FontFamily" Value="/Fonts/Quicksand/#Quicksand Regular"></Setter>
         </Style>
     </Window.Resources>
-    
-    
 
-        <Grid>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Name="MenuGrid" Background="#EDF2F4">
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="99*"></ColumnDefinition>
-
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="9*"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Grid Name="MenuGrid" Background="#EDF2F4">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Image Source="\assets\logo-met-text-rechts.png"></Image>
+            <Image Source="\assets\logo-met-text-rechts.png"></Image>
 
 
 
-                <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnHome" Click="btnHome_Click">Home</Button>
-                <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnStemwijzer" Click="btnStemwijzer_Click" >Stemwijzer</Button>
-                <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
-                <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
+            <Button Grid.Column="1"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnHome" Click="btnHome_Click">Home</Button>
+            <Button Grid.Column="2"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" x:Name="btnStemwijzer" Click="btnStemwijzer_Click" >Stemwijzer</Button>
+            <Button Grid.Column="3"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4" Background="#8D99AE" BorderThickness="0" Margin="10" >Over ons</Button>
+            <Button Grid.Column="4"  Style="{StaticResource CustomFontQ}" Foreground="#EDF2F4"  Background="#8D99AE" BorderThickness="0" Margin="10" >Beheerder</Button>
 
-            </Grid>
-            
-            <!--hier onder-->
-            <Grid Grid.Row="1" Name="beheerderGrid" Margin="80" Background="#8D99AE">
+        </Grid>
+
+        <!--hier onder-->
+        <Grid Grid.Row="1" Name="beheerderGrid" Margin="80" Background="#8D99AE">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="10*"/>
@@ -70,10 +70,10 @@
             <TextBox Grid.Row="5" Name="txtPassword" Style="{StaticResource CustomFontQ}" Margin="150,0,300,10"/>
             <Button Grid.Row="7" Name="Loginbtn" Style="{StaticResource CustomFontQ}" Foreground="#8D99AE" Content="Login" Margin="100,0,400,10" Click="btnLogin_Click"/>
 
-            </Grid>
-
         </Grid>
 
-       
-    
+    </Grid>
+
+
+
 </Window>

@@ -75,7 +75,7 @@ namespace stemwijzer
             {
                 txtVraag.Text = questions[HuidigeVraagIndex];
                 txtStelling.Text = stellingen[HuidigeVraagIndex];
-                txtNummer.Text = $"{HuidigeVraagIndex}/{questions.Count-1}";
+                txtNummer.Text = $"{HuidigeVraagIndex}/{questions.Count - 1}";
             }
             else
             {

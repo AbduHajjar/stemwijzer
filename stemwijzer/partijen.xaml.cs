@@ -26,8 +26,6 @@ namespace stemwijzer
         public partijen()
         {
             InitializeComponent();
-            //PartijLijst = new ObservableCollection<Partij>();
-            //DataContext = this;
             FillPartijen();
         }
 
@@ -55,69 +53,25 @@ namespace stemwijzer
             if (txtPartij.Text == "" || txtScore.Text == "")
             {
                 MessageBox.Show("Vul een partij en score in.");
-            }
-            else if (partijnLijst.Items.Contains(txtPartij.Text.ToUpper()))
-            {
-                MessageBox.Show("Deze partij bestaat al.");
-            }
-            else
-            {
-                string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-                string InsertPartij = "INSERT INTO partijen (name, score) VALUES (@name, @score)";
-
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                partijnLijst.Items.Clear();
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(InsertPartij, connection);
-                cmd.Parameters.AddWithValue("@name", txtPartij.Text);
-                cmd.Parameters.AddWithValue("@score", txtScore.Text);
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
-                FillPartijen();
-            }
-        }
-
-
-        private void btnUpdatePartij_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (partijnLijst.SelectedItem == null)
-            {
-                MessageBox.Show("Selecteer een partij.");
                 return;
             }
-
-            string selectedPartij = partijnLijst.SelectedItem.ToString();
-
-            if (string.IsNullOrEmpty(selectedPartij))
-            {
-                MessageBox.Show("Ongeldige selectie.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtPartij.Text))
-            {
-                MessageBox.Show("Vul een partij in.");
-                return;
-            }
-
             string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-            string UpdatePartij = "UPDATE partijen SET name = @name WHERE name = @selectedPartij";
+            string InsertPartij = "INSERT INTO partijen (name, score) VALUES (@name, @score)";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    MySqlCommand cmd = new MySqlCommand(UpdatePartij, connection);
+                    MySqlCommand cmd = new MySqlCommand(InsertPartij, connection);
                     cmd.Parameters.AddWithValue("@name", txtPartij.Text);
-                    cmd.Parameters.AddWithValue("@selectedPartij", selectedPartij);
+                    cmd.Parameters.AddWithValue("@score", txtScore.Text);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Partij bijgewerkt.");
-                    partijnLijst.Items.Clear();
+                    MessageBox.Show("Partij toegevoegd.");
                     txtPartij.Text = "";
+                    txtScore.Text = "";
+                    partijnLijst.Items.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -129,7 +83,87 @@ namespace stemwijzer
                     FillPartijen();
                 }
             }
+        }
 
+        private void partijnLijst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = partijnLijst.SelectedItem;
+            if (selectedItem != null)
+            {
+                string[] parts = selectedItem.ToString().Split(new string[] { " - Score: " }, StringSplitOptions.None);
+                if (parts.Length == 2)
+                {
+                    txtPartij.Text = parts[0]; // Partij name
+                    txtScore.Text = parts[1];  // Score
+                }
+                else
+                {
+                    MessageBox.Show("Ongeldige selectie.");
+                }
+            }
+        }
+
+        private void btnUpdatePartij_Click(object sender, RoutedEventArgs e)
+        {
+            if (partijnLijst.SelectedItem == null)
+            {
+                MessageBox.Show("Selecteer een partij.");
+                return;
+            }
+
+            if (txtPartij.Text == "" || txtScore.Text == "")
+            {
+                MessageBox.Show("Vul een partij en score in.");
+                return;
+            }
+
+            string selectedItem = partijnLijst.SelectedItem.ToString();
+            string[] parts = selectedItem.Split(new string[] { " - Score: " }, StringSplitOptions.None);
+            if (parts.Length != 2)
+            {
+                MessageBox.Show("Ongeldige selectie.");
+                return;
+            }
+
+            string selectedPartij = parts[0];
+            int selectedScore;
+            if (!int.TryParse(parts[1], out selectedScore))
+            {
+                MessageBox.Show("Ongeldige score.");
+                return;
+            }
+
+            string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
+            string UpdatePartij = "UPDATE partijen SET name = @name, score = @score WHERE name = @selectedPartij AND score = @selectedScore";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand(UpdatePartij, connection);
+                    cmd.Parameters.AddWithValue("@name", txtPartij.Text);
+                    cmd.Parameters.AddWithValue("@score", txtScore.Text);
+                    cmd.Parameters.AddWithValue("@selectedPartij", selectedPartij);
+                    cmd.Parameters.AddWithValue("@selectedScore", selectedScore);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Partij bijgewerkt.");
+                    txtPartij.Text = "";
+                    txtScore.Text = "";
+                    partijnLijst.Items.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Er is een fout opgetreden: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    FillPartijen();
+                }
+            }
+          
         }
 
         private void btnDeletePartij_Click(object sender, RoutedEventArgs e)
@@ -184,6 +218,8 @@ namespace stemwijzer
             }
         }
 
+       
+
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow varMainwindow = new MainWindow();
@@ -204,9 +240,6 @@ namespace stemwijzer
             varBeheerder.Show();
             this.Close();
         }
-
-        //adding Update to complete the CRUD..
-
 
     }
 }

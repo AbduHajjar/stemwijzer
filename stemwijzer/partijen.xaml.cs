@@ -83,49 +83,7 @@ namespace stemwijzer
 
         private void btnUpdatePartij_Click(object sender, RoutedEventArgs e)
         {
-            if (partijnLijst.SelectedItem == null)
-            {
-                MessageBox.Show("Selecteer een partij.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtPartij.Text) || string.IsNullOrWhiteSpace(txtScore.Text))
-            {
-                MessageBox.Show("Vul een partij en score in.");
-                return;
-            }
-
-            string selectedItem = partijnLijst.SelectedItem.ToString();
-            string[] parts = selectedItem.Split(new string[] { " - Score: " }, StringSplitOptions.None);
-            if (parts.Length != 2)
-            {
-                MessageBox.Show("Ongeldige selectie.");
-                return;
-            }
-
-            string oldPartij = parts[0];
-            int oldScore = int.Parse(parts[1]);
-
-            string connectionString = "Server=localhost;Database=stemwijzer;Uid=root;Pwd=;";
-            string UpdatePartij = "UPDATE partijen SET name = @newName, score = @newScore WHERE name = @oldName AND score = @oldScore";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(UpdatePartij, connection);
-                cmd.Parameters.AddWithValue("@newName", txtPartij.Text);
-                cmd.Parameters.AddWithValue("@newScore", txtScore.Text);
-                cmd.Parameters.AddWithValue("@oldName", oldPartij);
-                cmd.Parameters.AddWithValue("@oldScore", oldScore);
-                cmd.ExecuteNonQuery();
-            }
-
-
-
-            partijnLijst.Items.Clear();
-            FillPartijen();
-            MessageBox.Show("Partij bewerkt.");
-            partijnLijst.SelectedItem = "";
+           
         }
 
         private void btnDeletePartij_Click(object sender, RoutedEventArgs e)

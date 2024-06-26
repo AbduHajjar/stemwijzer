@@ -52,7 +52,7 @@
 
 
         <Grid x:Name="lijstGrid" Grid.Row="1">
-            <TextBlock x:Name="resultaatTitel" Text="xxxx" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30" Margin="20,20,220,300"/>
+            <TextBlock x:Name="resultaatTitel" Text="xxhxx" Style="{StaticResource CustomFont}" Foreground="#EDF2F4" FontSize="30" Margin="20,20,220,300"/>
         </Grid>
     </Grid>
 </Window>

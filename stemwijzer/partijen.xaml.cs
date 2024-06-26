@@ -234,6 +234,13 @@ namespace stemwijzer
             this.Close();
         }
 
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            about varAbout = new about();
+            varAbout.Show();
+            this.Close();
+        }
+
         private void btnBeheerder_Click(object sender, RoutedEventArgs e)
         {
             beheerder varBeheerder = new beheerder();

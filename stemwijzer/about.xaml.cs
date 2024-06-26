@@ -22,6 +22,34 @@ namespace stemwijzer
         public about()
         {
             InitializeComponent();
+
+            aboutList.Text = "Over Ons\r\n\r\nWij zijn een toonaangevend softwarebedrijf gespecialiseerd in het ontwikkelen van stemwijzer apps. Ons ervaren team combineert geavanceerde technologie met diepgaande kennis van politiek en gebruikerservaring om gebruiksvriendelijke en betrouwbare stemhulpen te creëren. Met onze op maat gemaakte oplossingen helpen we gebruikers bij het maken van weloverwogen keuzes tijdens verkiezingen. Vertrouw op ons voor innovatieve en efficiënte stemwijzer applicaties die bijdragen aan een transparanter democratisch proces.";
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow varMainwindow = new MainWindow();
+            varMainwindow.Show();
+            this.Close();
+        }
+
+        private void btnStemwijzer_click(object sender, RoutedEventArgs e)
+        {
+            Stemwijzer varStemwijzer = new Stemwijzer();
+            varStemwijzer.Show();
+            this.Close();
+        }
+
+        private void btnOverons_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBeheerder_Click(object sender, RoutedEventArgs e)
+        {
+            beheerder varBeheerder = new beheerder();
+            varBeheerder.Show();
+            this.Close();
         }
     }
 }

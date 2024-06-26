@@ -24,6 +24,7 @@ namespace stemwijzer
         private int HuidigeScore = 0;
         private List<string> questions;
         private List<string> stellingen;
+        string partij;
 
         public Stemwijzer()
         {
@@ -87,7 +88,11 @@ namespace stemwijzer
         private void ShowResult()
         {
             string partij = DeterminePartij(HuidigeScore);
-            MessageBox.Show($"Je antwoorden passen het meest bij: {partij}");
+            //MessageBox.Show($"Je antwoorden passen het meest bij: {partij}");
+            resultaat varResultaat = new resultaat(partij);
+            varResultaat.Show();
+            //txtVraag.Text = $"Je antwoorden passen het meest bij: {partij}";
+            this.Close();
 
             HuidigeVraagIndex = 0;
             HuidigeScore = 0;

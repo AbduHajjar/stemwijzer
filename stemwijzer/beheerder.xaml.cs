@@ -54,5 +54,12 @@ namespace stemwijzer
             varStemwijzer.Show();
             this.Close();
         }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            about varAbout = new about();
+            varAbout.Show();
+            this.Close();
+        }
     }
 }
